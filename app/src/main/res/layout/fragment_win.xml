@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/purple"
+                tools:context="com.example.ssani.fingo.WinFragment">
+
+    <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/win"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dm_large"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/unicorn"
+            />
+
+    <TextView
+            android:id="@+id/win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/dm_very_huge"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_vvv_huge"
+            android:textColor="@color/white"
+            android:text="@string/win_text"
+            />
+
+    <Button
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/win"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dm_very_huge"
+            android:background="@drawable/regular_button_selector"
+            android:textSize="@dimen/text_big"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:textColor="@color/purple"
+            android:text="@string/home_text"
+            />
+
+</RelativeLayout>

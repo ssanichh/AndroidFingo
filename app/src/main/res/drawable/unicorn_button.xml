@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+            android:paddingTop="@dimen/dm_small"
+        android:paddingStart="@dimen/dm_small"
+        android:paddingEnd="@dimen/dm_small"
+        android:paddingBottom="@dimen/dm_small">
+
+    <item android:id="@+android:id/background"
+          android:drawable="@drawable/purple_button" />
+
+    <item android:id="@+android:id/toggle"
+          android:drawable="@drawable/unicorn"
+          />
+
+</layer-list>

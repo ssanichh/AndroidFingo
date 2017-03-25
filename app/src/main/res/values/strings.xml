@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fingo</string>
+    <string name="start_button">Start</string>
+
+    <string name="row">button_row</string>
+    <string name="column">button_column</string>
+    <string name="value">button_value</string>
+
+    <string name="win_text">You win!</string>
+    <string name="home_text">Home</string>
+</resources>
