@@ -2,8 +2,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/purple"
-                tools:context="com.example.ssani.fingo.WinFragment">
+                android:background="@color/purple">
 
     <ImageView
             android:id="@+id/logo"

@@ -7,6 +7,7 @@
     <dimen name="dm_huge">24dp</dimen>
     <dimen name="dm_very_huge">32dp</dimen>
 
+    <dimen name="text_tiny">8sp</dimen>
     <dimen name="text_very_little">10sp</dimen>
     <dimen name="text_little">12sp</dimen>
     <dimen name="text_small">14sp</dimen>
@@ -17,4 +18,6 @@
     <dimen name="text_very_huge">32sp</dimen>
     <dimen name="text_vv_huge">40sp</dimen>
     <dimen name="text_vvv_huge">48sp</dimen>
+
+    <dimen name="menu_buttons_width">160dp</dimen>
 </resources>

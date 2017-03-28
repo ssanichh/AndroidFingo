@@ -1,0 +1,29 @@
+{
+  "Classic" : {
+    "0" : "Hot bartender",
+    "1" : "Creepy old dude",
+    "2" : "White tennies",
+    "3" : "White girl wasted",
+    "4" : "Basil Hayden",
+    "5" : "Free drinks",
+    "6" : "Crying in the bathroom",
+    "7" : "But first, a selfie",
+    "8" : "Hot stranger",
+    "9" : "Cougar town",
+    "10" : "nerd reading a book",
+    "11" : "loud philosophical drunk",
+    "12" : "Shots, shots, shots",
+    "13" : "table's all on their phone",
+    "14" : "kissy kissy time",
+    "15" : "Run into your ex",
+    "16" : "drink someone else's drink",
+    "17" : "Hey there",
+    "18" : "WaHo trip",
+    "19" : "Vomit in banyo",
+    "20" : "Smells like skunk",
+    "21" : "Bar hop",
+    "22" : "Red bull time",
+    "23" : "closing time",
+    "unicorn" : "PROSTIE"
+  }
+}
