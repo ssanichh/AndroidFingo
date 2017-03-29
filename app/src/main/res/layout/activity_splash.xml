@@ -24,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="@dimen/dm_huge"
             />
 
     <TextView
@@ -34,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/space"
-            android:layout_marginBottom="@dimen/dm_normal"
             android:textSize="@dimen/text_vvv_huge"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -46,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/game_title"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="@dimen/dm_normal"
         android:visibility="invisible"
         >
 

@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "802885745664",
+    "firebase_url": "https://fingo-e258a.firebaseio.com",
+    "project_id": "fingo-e258a",
+    "storage_bucket": "fingo-e258a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802885745664:android:6698d99db77a7300",
+        "android_client_info": {
+          "package_name": "com.ameskate.fingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802885745664-06t0ssqot5ntrpg4l9oi5i5d00p34pcp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ameskate.fingo",
+            "certificate_hash": "7facc23ccdc8d8f9ad92f2346f9a3a20c766c5dc"
+          }
+        },
+        {
+          "client_id": "802885745664-cpv3lja4pdkbc04u5iegijshmtepum8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkplHZgMoJxRsNaUIHz9SWQTQKWzHz8Ks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802885745664-vbitc2eq4ofha8fr6p58rdngfrb46flq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.MrRobot.Fingo"
+              }
+            },
+            {
+              "client_id": "802885745664-cpv3lja4pdkbc04u5iegijshmtepum8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

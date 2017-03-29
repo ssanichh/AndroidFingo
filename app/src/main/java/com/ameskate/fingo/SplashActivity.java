@@ -1,6 +1,7 @@
 package com.ameskate.fingo;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -45,15 +46,20 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         ButterKnife.bind(this);
 
         Log.d("GAME_TEST", "Start get data from data manager");
-        DataManager dataManager = App.getInstance().getDataManager();
+        final DataManager dataManager = App.getInstance().getDataManager();
         if(mGameModes == null) dataManager.getGameData(new DataManager.GameDataCallback(){
             @Override
             public void result(ArrayList<GameMode> res) {
+                if(res.size() == 0){
+                    res = dataManager.getOfflineGameData();
+                }
                 mGameModes = res;
                 mProgBar.setVisibility(View.GONE);
                 createButtons();
             }
         });
+
+        loadFont();
 //        if(isOnline()){
 //            DatabaseReference db = FirebaseDatabase.getInstance().getReference();
 //            db.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -98,6 +104,11 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    private void loadFont(){
+        Typeface tf = Typeface.createFromAsset(getAssets(), Constants.ORANGE_FONT_FILE);
+        mTitle.setTypeface(tf);
+    }
+
     private void createButtons(){
         if(mGameModes == null || mGameModes.size() == 0) return;
 
@@ -134,7 +145,7 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
                 .scaleY(1f)
                 .setDuration(duration)
                 .setStartDelay(delay)
-                .setInterpolator(new OvershootInterpolator())
+                .setInterpolator(new OvershootInterpolator(0.7f))
                 .start();
 
         mMenuView.setVisibility(View.VISIBLE);
@@ -198,7 +209,7 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
                 .scaleX(0f)
                 .scaleY(0f)
                 .setDuration(duration)
-                .setInterpolator(new AnticipateInterpolator())
+                .setInterpolator(new AnticipateInterpolator(0.7f))
                 .withEndAction(new Runnable() {
                     @Override
                     public void run() {

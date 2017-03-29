@@ -2,6 +2,7 @@ package com.ameskate.fingo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -9,6 +10,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,6 +37,12 @@ public class DataManager {
                 gameCallback.result(modes);
             }
         });
+    }
+
+    public ArrayList<GameMode> getOfflineGameData(){
+        writeGameModeBackup(null);
+        String data = getDataFromLocalStorage();
+        return parseResponse(data);
     }
 
     private void getData(final DataCallback callback){
@@ -75,6 +83,7 @@ public class DataManager {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map<String, String> value = (Map<String, String>)dataSnapshot.getValue();
                 JSONObject json = new JSONObject(value);
+                Log.d("FIREBASE_TEST", "Result json = "+json.toString());
                 fCallback.result(json.toString());
             }
 
@@ -103,11 +112,19 @@ public class DataManager {
                 GameMode mode = new GameMode();
                 mode.setName(key);
 
-                JSONObject btns = json.getJSONObject(key);
-                if(!btns.isNull("unicorn")) mode.setUnicorn(btns.getString("unicorn"));
+                Map<Integer, String> buttons = null;
+                Object btns = json.get(key);
 
-                Map<Integer, String> buttons = parseButtons(btns);
-                if(buttons.size() == 24) {
+                if(btns instanceof JSONObject){
+                    JSONObject j = (JSONObject) btns;
+                    if(!j.isNull("unicorn")) mode.setUnicorn(j.getString("unicorn"));
+                    buttons = parseButtons(j);
+                }else if(btns instanceof JSONArray){
+                    JSONArray j = (JSONArray) btns;
+                    buttons = parseButtons(j);
+                }
+
+                if(buttons!= null && buttons.size() == 24) {
                     mode.setButtons(buttons);
                     gameModes.add(mode);
                 }
@@ -125,6 +142,16 @@ public class DataManager {
 
         for(int i=0; i<24; i++){
             if(!btns.isNull(""+i)) buttons.put(i, btns.getString(""+i));
+        }
+
+        return buttons;
+    }
+
+    private Map<Integer, String> parseButtons(JSONArray btns) throws JSONException{
+        Map<Integer, String> buttons = new HashMap<>();
+
+        for(int i=0; i<btns.length(); i++){
+            buttons.put(i, btns.getString(i));
         }
 
         return buttons;
