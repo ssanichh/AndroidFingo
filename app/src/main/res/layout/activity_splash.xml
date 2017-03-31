@@ -1,73 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/purple">
 
-    <ImageView
-            android:id="@+id/logo"
-            android:visibility="invisible"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/game_title"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:padding="@dimen/dm_large"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:src="@drawable/game"
-            />
-
-    <Space
-            android:id="@+id/space"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            />
-
-    <TextView
-            android:id="@+id/game_title"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/space"
-            android:textSize="@dimen/text_vvv_huge"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:text="@string/app_name"/>
-
-    <ScrollView
-        android:id="@+id/menu_buttons_scroll"
+    <FrameLayout
+        android:id="@+id/splash_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/game_title"
-        android:layout_alignParentBottom="true"
-        android:visibility="invisible"
-        >
-
-        <LinearLayout
-            android:id="@+id/menu_buttons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:padding="@dimen/dm_normal"
-            android:animateLayoutChanges="true"
-            >
-
-            <ProgressBar
-                android:id="@+id/progress"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:indeterminate="true"
-                android:indeterminateTint="@color/white"
-                android:visibility="visible"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

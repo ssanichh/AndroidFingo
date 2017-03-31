@@ -2,11 +2,12 @@ package com.ameskate.fingo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class GameMode implements Parcelable {
+public class GameMode implements Parcelable, Comparable<GameMode> {
     private String name;
     private Map<Integer, String> buttons;
     private String unicorn;
@@ -88,4 +89,9 @@ public class GameMode implements Parcelable {
             return new GameMode[size];
         }
     };
+
+    @Override
+    public int compareTo(@NonNull GameMode o) {
+        return this.getName().compareTo(o.getName());
+    }
 }

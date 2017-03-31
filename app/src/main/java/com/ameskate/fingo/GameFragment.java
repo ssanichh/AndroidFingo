@@ -107,7 +107,6 @@ public class GameFragment extends Fragment {
 
     private void configureContainer(){
         int minSize = getMinimalSize();
-        Log.d(TAG, "configureContainer: minSize = "+minSize);
 
         RelativeLayout.LayoutParams params =
                 (RelativeLayout.LayoutParams) mMainContainer.getLayoutParams();
@@ -254,7 +253,6 @@ public class GameFragment extends Fragment {
                 });
     }
 
-    //TODO Review this method with clear mind
     private void checkCheater(CompoundButton button){
         int row = (int) button.getTag(R.string.row);
         int column = (int) button.getTag(R.string.column);

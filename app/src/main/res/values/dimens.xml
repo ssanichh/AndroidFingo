@@ -19,5 +19,7 @@
     <dimen name="text_vv_huge">40sp</dimen>
     <dimen name="text_vvv_huge">48sp</dimen>
 
+    <dimen name="text_for_menu">13sp</dimen>
+
     <dimen name="menu_buttons_width">160dp</dimen>
 </resources>

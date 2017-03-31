@@ -42,11 +42,11 @@ public final class ViewUtils {
         button.setTextColor(ContextCompat
                 .getColorStateList(context, R.color.toggle_button_textcolor_selector));
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                context.getResources().getDimension(R.dimen.text_small));
+                context.getResources().getDimension(R.dimen.text_little));
         button.setTypeface(Typeface.SANS_SERIF, Typeface.NORMAL);
         button.setAllCaps(false);
         button.setOnCheckedChangeListener(listener);
-        int padding = (int) context.getResources().getDimension(R.dimen.text_tiny);
+        int padding = (int) context.getResources().getDimension(R.dimen.dm_small);
         button.setPadding(padding, padding, padding, padding);
         button.setEllipsize(TextUtils.TruncateAt.END);
 
@@ -72,23 +72,34 @@ public final class ViewUtils {
     public static Button getMenuButton(Context context, GameMode tag, View.OnClickListener listener){
         Button button = new Button(context);
         LinearLayout.LayoutParams params = new LinearLayout
-                .LayoutParams((int) context.getResources().getDimension(R.dimen.menu_buttons_width),
-                ViewGroup.LayoutParams.WRAP_CONTENT);
-        int margin = (int) context.getResources().getDimension(R.dimen.dm_normal);
-        params.setMargins(0, 0, 0, margin);
+                .LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
+        params.weight = 1;
         button.setLayoutParams(params);
-        int padding = (int) context.getResources().getDimension(R.dimen.dm_small);
-        button.setPadding(padding, padding, padding, padding);
 
         button.setBackground(ContextCompat.getDrawable(context, R.drawable.regular_button_selector));
         button.setTextColor(ContextCompat.getColor(context, R.color.purple));
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                context.getResources().getDimension(R.dimen.text_normal));
+                context.getResources().getDimension(R.dimen.text_little));
         button.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
-        button.setText(tag.getName());
+        button.setAllCaps(false);
+        int padding = (int) context.getResources().getDimension(R.dimen.dm_small);
+        button.setPadding(padding, padding, padding, padding);
 
-        button.setTag(tag);
+        if(tag != null){
+            button.setText(tag.getName());
+            button.setTag(tag);
+        }
+
         button.setOnClickListener(listener);
+
+        return button;
+    }
+
+    public static Button getMenuUnicorn(Context context, GameMode tag, View.OnClickListener listener){
+        Button button = getMenuButton(context, tag, listener);
+
+        button.setText("");
+        button.setBackground(ContextCompat.getDrawable(context, R.drawable.unicorn_button_selector));
 
         return button;
     }
